@@ -66,10 +66,18 @@ function drawBricks() {
 
 function draw() {
     background('black');
+    if(bricks.length === 0) {
+        endScreen('You Win!');
+    }
+    if(!alive && bricks.length != 0) {
+        endScreen('GAME OVER');
+    }
+
     if(alive) {
         drawBricks();
         drawPaddle();
         drawBall();
+        displayScore();
         
     }
 }
@@ -161,4 +169,20 @@ function drawBall() {
 
     ball.x += ball.speedX;
     ball.y += ball.speedY;
+}
+
+function displayScore() {
+    fill('white');
+    textAlign(CENTER);
+    textSize(20);
+    text(`Score: ${score}`, windowWidth / 2, 22);
+}
+
+function endScreen(message) {
+    fill('white');
+    textAlign(CENTER);
+    textSize(38);
+    text(message, 300, 170);
+    text('Press Spacebar To Restart Game', 300, 225);
+    text(`Score: ${score}`, 300, 280);
 }
