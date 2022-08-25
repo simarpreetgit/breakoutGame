@@ -13,11 +13,6 @@ let alive = true;
 const brickWidth = Math.round(windowWidth/cols - 4);
 const brickHeight = Math.round((windowHeight * 1/2) / rows - 10);
 
-//const brickWidth = windowWidth/cols -4;
-//const brickHeight =(windowHeight * 1/2) / rows - 10;
-
-// const brickWidth = Math.floor(Math.random()*16777215).windowHeight/cols -4;
-// const brickHeight = Math.floor(Math.random()*16777215).windowHeight * 1/2 /rows - 10;
 
 let bricks = [];
 let score = 0;
@@ -179,10 +174,10 @@ function displayScore() {
 }
 
 function endScreen(message) {
-    fill('white');
+    fill('red');
     textAlign(CENTER);
     textSize(38);
     text(message, 300, 170);
-    text('Press Spacebar To Restart Game', 300, 225);
+    text('Spacebar To Restart Game', 300, 225);
     text(`Score: ${score}`, 300, 280);
 }
